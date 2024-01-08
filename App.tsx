@@ -22,6 +22,22 @@ export default function App() {
       idade: 28
     }
   ])
+
+  function handleAdd() {
+    if (!nome || !idade) {
+      return;
+    }
+
+    let aluno = {
+      nome: nome,
+      idade: idade,
+    }
+
+    setAlunos(values => [...values, aluno])
+    setNome("")
+    setIdade("")
+    setShowInput(false)
+  }
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row" }}>
@@ -43,11 +59,11 @@ export default function App() {
 
           <TextInput
             style={styles.input}
-            placeholder='Digite seu nome...'
+            placeholder='Digite sua idade...'
             value={idade}
             onChangeText={(text) => setIdade(text)} />
 
-          <Pressable style={styles.button}>
+          <Pressable style={styles.button} onPress={handleAdd}>
             <Text style={{ color: '#FFF', textAlign: 'center' }}>Cadastrar</Text>
           </Pressable>
         </View>
