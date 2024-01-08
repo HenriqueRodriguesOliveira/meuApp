@@ -1,3 +1,6 @@
+![image](https://github.com/HenriqueRodriguesOliveira/meuApp/assets/79226722/8478ce4e-d84e-4f42-8a5a-bcf4721b4e41)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
