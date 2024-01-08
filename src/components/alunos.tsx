@@ -1,4 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { StackParamList } from '../routes';
 
 interface AlunoProps {
     nome: string;
@@ -6,11 +9,12 @@ interface AlunoProps {
 }
 
 export function Aluno({ nome, idade }: AlunoProps) {
+    const navigation = useNavigation<NativeStackNavigationProp<StackParamList>>();
     return (
-        <View style={styles.container}>
+        <Pressable style={styles.container} onPress={() => navigation.navigate("Detail", { nome, idade })}>
             <Text style={styles.text}>Bem vindo {nome}</Text>
             <Text style={styles.text}>Idade: {idade}</Text>
-        </View>
+        </Pressable>
     );
 }
 
